@@ -39,6 +39,7 @@ typedef struct s_mlx_data
 	void	*win;
 	int		win_w;
 	int		win_h;
+	int		moves_count;
 	t_map	**map;
 }	t_mlx_data;
 

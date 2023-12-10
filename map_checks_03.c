@@ -18,6 +18,7 @@
 #include "memory_handler.h"
 #include "game_handler.h"
 #include "structs_definitions.h"
+#include "itoa.h"
 
 /*
 Free all allocted memory for 'seen' cell list

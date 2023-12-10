@@ -18,6 +18,7 @@
 #include "memory_handler.h"
 #include "game_handler.h"
 #include "structs_definitions.h"
+#include "itoa.h"
 
 /*
 Returns current amount of collectables in map

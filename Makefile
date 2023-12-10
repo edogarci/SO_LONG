@@ -21,6 +21,7 @@ MINILIBX = $(MINILIBX_PATH)/libmlx.a
 HEADER = error_handler.h \
 		game_handler.h \
 		general.h \
+		itoa.h \
 		load_map_utils.h \
 		map_checks.h \
 		map_handler.h \
@@ -39,6 +40,7 @@ SRCS = error_handler.c \
 		load_map_utils_01.c \
 		load_map_utils_02.c \
 		main.c \
+		itoa.c \
 		map_checks_01.c \
 		map_checks_02.c \
 		map_checks_03.c \
@@ -70,13 +72,11 @@ $(MINILIBX):
 
 clean:
 	@echo "\033[0;31mBorrando archivos generados en la compilacion...\033[0m"
-	@make -C $(LIBFT_PATH) clean
 	@make -C $(MINILIBX_PATH) clean
 	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	@echo "\033[0;31mBorrando librerias generadas...\033[0m"
-	@make -C $(LIBFT_PATH) libclean
 	@$(RM) $(NAME) $(NAME_BONUS) $(SO_LONG) $(SO_LONG_BONUS)
 
 re: fclean all

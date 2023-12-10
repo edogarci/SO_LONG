@@ -18,6 +18,7 @@
 #include "memory_handler.h"
 #include "game_handler.h"
 #include "structs_definitions.h"
+#include "itoa.h"
 #include "mlx/mlx.h"
 
 /*
@@ -74,7 +75,7 @@ void	f_move_player(int key, t_map **map, t_mlx_data *data)
 			f_destroy_everything(data);
 		return ;
 	}
-	f_set_cells_new_values(curr, new, map);
+	f_set_cells_new_values(curr, new, map, &(data->moves_count));
 	f_put_img_in_win(data, curr, curr->status);
 	f_put_img_in_win(data, new, new->status);
 }
@@ -103,6 +104,7 @@ void	f_start_game(t_map	*o_map)
 {
 	t_mlx_data	mlx;
 
+	mlx.moves_count = 0;
 	mlx.conn = mlx_init();
 	if (mlx.conn == NULL)
 		return (f_show_error(15));

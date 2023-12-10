@@ -34,6 +34,7 @@ void	f_put_img_in_win(t_mlx_data *data, t_cell *cell, char cell_type);
 int		f_close_window(t_mlx_data *data);
 void	f_set_player_xy(int *player_x, int *player_y, int key, t_map **map);
 void	f_destroy_everything(t_mlx_data *data);
-void	f_set_cells_new_values(t_cell *curr, t_cell *new, t_map **map);
+void	f_set_cells_new_values(t_cell *curr, t_cell *new, t_map **map,
+			int *moves);
 
 #endif

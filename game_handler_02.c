@@ -18,6 +18,7 @@
 #include "memory_handler.h"
 #include "game_handler.h"
 #include "structs_definitions.h"
+#include "itoa.h"
 #include "mlx/mlx.h"
 
 /*
@@ -58,7 +59,7 @@ void	f_put_img_in_win(t_mlx_data *data, t_cell *cell, char cell_type)
 
 int	f_close_window(t_mlx_data *data)
 {
-	f_print_msg("Cerra ventana. Juego terminado.");
+	f_print_msg("Cerra ventana. Juego terminado.\n");
 	mlx_destroy_window(data->conn, data->win);
 	free(data->conn);
 	f_free_omap(data->map);
@@ -94,12 +95,21 @@ void	f_destroy_everything(t_mlx_data *data)
 }
 
 /*
-update cells statuses
+update cells statuses and print total moves done
 */
-void	f_set_cells_new_values(t_cell *curr, t_cell *new, t_map **map)
+void	f_set_cells_new_values(t_cell *curr, t_cell *new, t_map **map,
+	int *moves)
 {
+	char	*itoa;
+
 	curr->status = '0';
 	new->status = 'P';
 	(*map)->player_x = new->x;
 	(*map)->player_y = new->y;
+	(*moves)++;
+	f_print_msg("Movimiento numero: ");
+	itoa = ft_itoa((*moves));
+	f_print_msg(itoa);
+	free(itoa);
+	f_print_msg("\n");
 }
