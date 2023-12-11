@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_checks_04.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 15:57:46 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/11 12:44:10 by edogarci         ###   ########.fr       */
+/*   Created: 2023/12/04 15:59:24 by edogarci          #+#    #+#             */
+/*   Updated: 2023/12/11 12:20:49 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,32 @@
 #include "game_handler.h"
 #include "structs_definitions.h"
 #include "itoa.h"
+#include "mlx/mlx.h"
 
-/*
-Game's main function :)
-*/
-int	main(int argc, char *argv[])
+void	f_check_valid_textures(t_mlx_data *data)
 {
-	char	*map;
-	t_map	*o_map;
+	char		*path;
+	char		*cell_type;
+	int			img_w;
+	int			img_h;
 
-	map = f_load_map(argc, argv);
-	if (map == NULL)
-		return (f_show_error (1), 0);
-	if (f_check_map_integrity(map) != 1)
+	cell_type = "10CEP";
+	path = "textures/1.xpm";
+	while (*cell_type != '\0')
 	{
-		o_map = f_create_object_map(map);
-		f_free_map(&map);
-		if (o_map == NULL)
-			f_show_error (1);
-		else
-			if (f_check_valid_paths(o_map) == 0)
-				f_start_game(o_map);
+		if (*cell_type == '0')
+			path = "textures/0.xpm";
+		else if (*cell_type == 'C')
+			path = "textures/C.xpm";
+		else if (*cell_type == 'E')
+			path = "textures/E.xpm";
+		else if (*cell_type == 'P')
+			path = "textures/P.xpm";
+		if (mlx_xpm_file_to_image(data->conn, path, &img_w, &img_h) == NULL)
+		{
+			f_show_error(17);
+			f_destroy_everything(data);
+		}
+		cell_type++;
 	}
-	else
-		f_free_map(&map);
-	f_free_omap(&o_map);
-	return (0);
 }

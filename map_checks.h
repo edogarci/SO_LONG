@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:04:40 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/04 16:06:35 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:15:57 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int		f_check_valid_paths(t_map *o_map);
 int		f_is_move_possible(int move, t_cell *curr, t_map *o_map);
 int		f_check_if_seen(t_cell *curr, t_cell **seen, int move);
 void	f_add_to_seen(t_cell *curr, t_cell **seen);
+void	f_check_valid_textures(t_mlx_data *data);
 
 #endif

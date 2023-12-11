@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:28 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/05 21:38:14 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:33:17 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	f_get_map_w_h(char *map, int *w, int *h)
 			(*h)++;
 		map++;
 	}
+	(*h)++;
 }
 
 /*

@@ -6,7 +6,7 @@
 #    By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 13:43:51 by alvalope          #+#    #+#              #
-#    Updated: 2023/12/07 12:16:46 by edogarci         ###   ########.fr        #
+#    Updated: 2023/12/11 12:14:08 by edogarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS = error_handler.c \
 		map_checks_01.c \
 		map_checks_02.c \
 		map_checks_03.c \
+		map_checks_04.c \
 		map_handler_01.c \
 		map_handler_02.c \
 		memory_handler.c
@@ -57,27 +58,30 @@ LIB = ar rcs
 all: $(NAME)
 
 $(OBJS): $(SRCS)
-	@echo "Compilando so_long..."
+	@echo "COMPILANDO SO_LONG..."
 	@$(CC) $(CFLAGS) -c $(SRCS)
+	@echo "PROCESO TERMINADO."
 
 $(NAME): $(OBJS) $(MINILIBX) $(HEADER)
-	@echo "Generando libreria so_long..."
+	@echo "COMPILANDO SO_LONG..."
 	@$(LIB) $(SO_LONG) $(OBJS)
 #	$(CC) -g $(CFLAGS) $(SO_LONG) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
 	@$(CC) -g $(CFLAGS) $(SRCS) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
-	@echo "\033[0;32mPROCESO TERMINADO.\033[0m"
+	@echo "PROCESO TERMINADO."
 
 $(MINILIBX):
 	@make  -C $(MINILIBX_PATH) all
 
 clean:
-	@echo "\033[0;31mBorrando archivos generados en la compilacion...\033[0m"
+	@echo "BORRANDO ARCHIVOS GENERADOS EN LA COMPILACION..."
 	@make -C $(MINILIBX_PATH) clean
 	@$(RM) $(OBJS) $(BONUS_OBJS)
+	@echo "PROCESO TERMINADO."
 
 fclean: clean
-	@echo "\033[0;31mBorrando librerias generadas...\033[0m"
+	@echo "BORRANDO FICHEROS GENERADOS..."
 	@$(RM) $(NAME) $(NAME_BONUS) $(SO_LONG) $(SO_LONG_BONUS)
+	@echo "PROCESO TERMINADO."
 
 re: fclean all
 

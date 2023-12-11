@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:01 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/05 21:41:34 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:50:09 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ void	f_put_img_in_win(t_mlx_data *data, t_cell *cell, char cell_type)
 	int		img_w;
 	int		img_h;
 
-	path = NULL;
-	if (cell_type == '1')
-		path = "textures/1.xpm";
-	else if (cell_type == '0')
+	path = "textures/1.xpm";
+	if (cell_type == '0')
 		path = "textures/0.xpm";
 	else if (cell_type == 'C')
 		path = "textures/C.xpm";
@@ -53,8 +51,8 @@ void	f_put_img_in_win(t_mlx_data *data, t_cell *cell, char cell_type)
 	{
 		mlx_put_image_to_window(data->conn, data->win, img,
 			(cell->x * 32), (cell->y * 32));
+		mlx_destroy_image(data->conn, img);
 	}
-	mlx_destroy_image(data->conn, img);
 }
 
 int	f_close_window(t_mlx_data *data)

@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:24 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/07 13:15:51 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:48:18 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	f_check_valid_paths(t_map *o_map)
 	t_cell	*curr;
 	t_cell	*seen;
 
-	printf("2\n");
 	elmnts = o_map->num_collect + 1;
 	curr = o_map->data;
 	while (curr->status != 'P')

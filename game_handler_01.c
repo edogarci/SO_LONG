@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:58:56 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/05 21:41:39 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:16:12 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void	f_start_game(t_map	*o_map)
 		return (f_show_error(15));
 	}
 	mlx.map = &o_map;
+	f_check_valid_textures(&mlx);
 	mlx_key_hook(mlx.win, f_handle_input, &mlx);
 	mlx_hook(mlx.win, 17, 0, f_close_window, &mlx);
 	f_init_game(&mlx, o_map);

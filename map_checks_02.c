@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:19 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/05 21:38:02 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:39:48 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ returns 1 if not
 */
 int	f_check_first_last_closed(char **map, int *h)
 {
-	while (*(*map) != '\n')
+	while (*(*map) != '\n' && *(*map) != '\0')
 	{
 		if (*(*map) != '1')
 			return (f_show_error(13), 1);

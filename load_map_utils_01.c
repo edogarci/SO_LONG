@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:06 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/07 13:15:05 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:48:05 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	f_read_map_file(char **file_path, char **map_data, int map_size)
 	}
 	else
 	{
-		printf("aqui 2");
 		f_show_error(4);
 	}
 	(*map_data)[map_size] = '\0';
@@ -54,7 +53,7 @@ int	f_get_map_size(char **file_path)
 
 	fd = open((*file_path), O_RDONLY);
 	if (fd <= 0)
-		return (printf("aqui"), f_show_error(4), -1);
+		return (f_show_error(4), -1);
 	temp_data = (char *)malloc(1024 * sizeof(char));
 	if (temp_data == NULL)
 		return (close(fd), f_show_error(5), -2);
@@ -79,30 +78,6 @@ Generate map file relative path
 	*file_path = NULL; <--- 
 	*file_path = '\0';
 */
-/*void	f_fill_path(char *map_name, char **file_path)
-{
-	char	*path;
-	char	*ptr_orig;
-
-	path = "./maps/";
-	ptr_orig = *file_path;
-	while ((*path) != '\0')
-	{
-		*(*file_path) = *path;
-		printf("%c\n", *path);
-		path++;
-		(*file_path)++;
-	}
-	while ((*map_name) != '\0')
-	{
-		*(*file_path) = *map_name;
-		printf("%c\n", *map_name);
-		map_name++;
-		(*file_path)++;
-	}
-	*file_path = NULL;
-	*file_path = ptr_orig;
-}*/
 void	f_fill_path(char *map_name, char *file_path)
 {
 	char	*path;
