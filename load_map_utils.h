@@ -13,6 +13,10 @@
 #ifndef LOAD_MAP_UTILS_H
 # define LOAD_MAP_UTILS_H
 
+# include "include/memory_leaks.h"
+
+
+
 void	f_read_map_file(char **file_path, char **map_data, int map_size);
 int		f_get_map_size(char **file_path);
 void	f_fill_path(char *map_name, char *file_path);

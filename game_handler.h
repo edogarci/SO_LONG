@@ -15,6 +15,10 @@
 
 # include "structs_definitions.h"
 
+# include "include/memory_leaks.h"
+
+
+
 # define XK_ESCAPE	53
 # define XK_W		13
 # define XK_A		0

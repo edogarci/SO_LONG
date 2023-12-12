@@ -13,6 +13,10 @@
 #ifndef ITOA_H
 # define ITOA_H
 
+# include "include/memory_leaks.h"
+
+
+
 char	*ft_itoa(int n);
 void	iterate_number(int n, int len, char *str);
 char	translate_to_char(int digit);

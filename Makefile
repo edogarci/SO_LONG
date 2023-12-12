@@ -66,7 +66,7 @@ $(NAME): $(OBJS) $(MINILIBX) $(HEADER)
 	@echo "COMPILANDO SO_LONG..."
 	@$(LIB) $(SO_LONG) $(OBJS)
 #	$(CC) -g $(CFLAGS) $(SO_LONG) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
-	@$(CC) -g $(CFLAGS) $(SRCS) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
+	@$(CC) -g $(CFLAGS) memory_leaks.a $(SRCS) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
 	@echo "PROCESO TERMINADO."
 
 $(MINILIBX):

@@ -15,6 +15,10 @@
 
 # include "structs_definitions.h"
 
+# include "include/memory_leaks.h"
+
+
+
 int		f_check_cep_amount(char *map);
 int		f_check_cell_values(char *map);
 int		f_get_first_line_len(char *map);

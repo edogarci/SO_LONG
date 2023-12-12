@@ -13,6 +13,8 @@
 #ifndef ERROR_HANDLER_H
 # define ERROR_HANDLER_H
 
+# include "include/memory_leaks.h"
+
 void	f_show_error(int msg);
 void	f_show_error_continued(int msg);
 void	f_print_msg(char *msg);

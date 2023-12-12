@@ -13,6 +13,10 @@
 #ifndef STRUCTS_DEFINITIONS_H
 # define STRUCTS_DEFINITIONS_H
 
+# include "include/memory_leaks.h"
+
+
+
 typedef struct s_cell
 {
 	int				x;

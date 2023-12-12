@@ -15,6 +15,10 @@
 
 # include "structs_definitions.h"
 
+# include "include/memory_leaks.h"
+
+
+
 t_map	*f_create_object_map(char *map);
 void	f_get_exit(char *map, int *x, int *y);
 void	f_get_player(char *map, int *x, int *y);
