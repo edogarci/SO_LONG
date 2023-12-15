@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:04:45 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/04 16:07:14 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:39:27 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define MEMORY_HANDLER_H
 
 # include "structs_definitions.h"
-
-# include "include/memory_leaks.h"
-
-
 
 void	f_free_omap(t_map **o_map);
 void	f_free_map(char **map);

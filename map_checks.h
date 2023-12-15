@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:04:40 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/11 12:15:57 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:39:21 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define MAP_CHECKS_H
 
 # include "structs_definitions.h"
-
-# include "include/memory_leaks.h"
-
-
 
 int		f_check_cep_amount(char *map);
 int		f_check_cell_values(char *map);

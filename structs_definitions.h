@@ -6,16 +6,12 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:04:47 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/04 16:07:35 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:39:31 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_DEFINITIONS_H
 # define STRUCTS_DEFINITIONS_H
-
-# include "include/memory_leaks.h"
-
-
 
 typedef struct s_cell
 {

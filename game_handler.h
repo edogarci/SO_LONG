@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:04:30 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/11 11:52:03 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:39:06 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define GAME_HANDLER_H
 
 # include "structs_definitions.h"
-
-# include "include/memory_leaks.h"
-
-
 
 # define XK_ESCAPE	53
 # define XK_W		13

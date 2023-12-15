@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:04:43 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/04 16:06:51 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:39:24 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define MAP_HANDLER_H
 
 # include "structs_definitions.h"
-
-# include "include/memory_leaks.h"
-
-
 
 t_map	*f_create_object_map(char *map);
 void	f_get_exit(char *map, int *x, int *y);

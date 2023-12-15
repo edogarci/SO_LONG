@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:01 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/11 11:50:09 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:35:02 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	f_close_window(t_mlx_data *data)
 {
 	f_print_msg("Cerra ventana. Juego terminado.\n");
 	mlx_destroy_window(data->conn, data->win);
-	free(data->conn);
 	f_free_omap(data->map);
 	exit(1);
 }
@@ -87,7 +86,6 @@ destroy all and close game
 void	f_destroy_everything(t_mlx_data *data)
 {
 	mlx_destroy_window(data->conn, data->win);
-	free(data->conn);
 	f_free_omap(data->map);
 	exit(1);
 }

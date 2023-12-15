@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:58:41 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/11 12:10:45 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:38:33 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,7 @@ void	f_show_error_continued(int msg)
 			f_print_msg("No hay un camino valido a alguno de los elementos.\n");
 		else if (msg == 17)
 			f_print_msg("Error al cargar alguna de las texturas.\n");
+		else if (msg == 18)
+			f_print_msg("El mapa indicado no es de tipo *.BER\n");
 	}
 }

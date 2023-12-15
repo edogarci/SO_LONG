@@ -6,13 +6,11 @@
 #    By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 13:43:51 by alvalope          #+#    #+#              #
-#    Updated: 2023/12/11 12:14:08 by edogarci         ###   ########.fr        #
+#    Updated: 2023/12/12 19:39:44 by edogarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-
-SO_LONG = so_long.a
 
 MINILIBX_PATH = ./mlx
 
@@ -34,6 +32,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 FRAMEWORK = -framework OpenGL -framework AppKit
 
+RM = rm -f
+
 SRCS = error_handler.c \
 		game_handler_01.c \
 		game_handler_02.c \
@@ -49,39 +49,29 @@ SRCS = error_handler.c \
 		map_handler_02.c \
 		memory_handler.c
 
-OBJS = $(SRCS:.c=.o)
-
 RM = rm -f
-
-LIB = ar rcs
 
 all: $(NAME)
 
-$(OBJS): $(SRCS)
-	@echo "COMPILANDO SO_LONG..."
-	@$(CC) $(CFLAGS) -c $(SRCS)
-	@echo "PROCESO TERMINADO."
-
-$(NAME): $(OBJS) $(MINILIBX) $(HEADER)
-	@echo "COMPILANDO SO_LONG..."
-	@$(LIB) $(SO_LONG) $(OBJS)
-#	$(CC) -g $(CFLAGS) $(SO_LONG) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
-	@$(CC) -g $(CFLAGS) memory_leaks.a $(SRCS) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
-	@echo "PROCESO TERMINADO."
+$(NAME): $(SRCS) $(MINILIBX) $(HEADER)
+	@echo "Compilando SO_LONG..."
+	@$(CC) -g $(CFLAGS) $(SRCS) $(MINILIBX) $(FRAMEWORK) -o $(NAME)
+	@echo "Terminado."
 
 $(MINILIBX):
-	@make  -C $(MINILIBX_PATH) all
+	@echo "Compilando MLX..."
+	@make -C $(MINILIBX_PATH) all
+	@echo "Terminado."
 
 clean:
-	@echo "BORRANDO ARCHIVOS GENERADOS EN LA COMPILACION..."
+	@echo "Ejecutando CLEAN..."
 	@make -C $(MINILIBX_PATH) clean
-	@$(RM) $(OBJS) $(BONUS_OBJS)
-	@echo "PROCESO TERMINADO."
+	@echo "Terminado."
 
 fclean: clean
-	@echo "BORRANDO FICHEROS GENERADOS..."
-	@$(RM) $(NAME) $(NAME_BONUS) $(SO_LONG) $(SO_LONG_BONUS)
-	@echo "PROCESO TERMINADO."
+	@echo "Ejecutando FCLEAN..."
+	@$(RM) $(NAME) $(SO_LONG)
+	@echo "Terminado."
 
 re: fclean all
 

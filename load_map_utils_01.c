@@ -6,7 +6,7 @@
 /*   By: edogarci <edogarci@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:06 by edogarci          #+#    #+#             */
-/*   Updated: 2023/12/11 10:48:05 by edogarci         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:25:20 by edogarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ int	f_get_map_size(char **file_path)
 
 /*
 Generate map file relative path
-	*file_path = NULL; <--- 
-	*file_path = '\0';
 */
 void	f_fill_path(char *map_name, char *file_path)
 {
@@ -157,6 +155,7 @@ char	*f_load_map_file(char *map_name)
 	if (map_data == NULL)
 		return (free(file_path), f_show_error(5), NULL);
 	f_read_map_file(&file_path, &map_data, map_size);
+	f_clean_newlines_at_end(map_data, &map_size);
 	free(file_path);
 	return (map_data);
 }
